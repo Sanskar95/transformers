@@ -1,0 +1,53 @@
+<div class='panel panel-primary' *ngIf='product'>
+    <div class='panel-heading'>
+        {{pageTitle  + "  " + product.productName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                    <div class='col-md-6'>
+                            <img class='center-block img-responsive' 
+                                 [style.width.px]='200' 
+                                 [style.margin.px]='2' 
+                                 [src]='product.imageUrl'
+                                 [title]='product.productName'>
+                        </div>
+                <div class='row'>
+                    <div class='col-md-3' style="color:darkred;font-size:25px">Name:</div>
+                    <div class='col-md-6' style="color:white;font-size:25px" >{{product.productName}}</div>
+                </div>
+                
+                <div class='row'>
+                    <div class='col-md-3' style="color:darkred;font-size:25px">Team:</div>
+                    <div class='col-md-6' style="color:white;font-size:25px">{{product.productCode | convertToSpaces: '-'}}</div>
+                </div>
+             
+                <div class='row'>
+                    <div class='col-md-3' style="color:darkred;font-size:25px">Description:</div>
+                    <div class='col-md-6' style="color:white  ;font-size:25px">{{product.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3' style="color:darkred;font-size:25px">ActionFigureLink:</div>
+                    <div class='col-md-6' style="color:white  ;font-size:25px">
+                        <a href={{product.buyUrl}} target="_blank">Buy the action figure Here</a>
+                    </div>
+                </div>
+                
+                 
+                 
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"  (click)='onBack()'>
+                <button class="btn btn-default orange-circle-button" (click)='OnBack()' href="">Back to the <br />list<br /><span class="orange-circle-greater-than">></span></button>
+        
+            </div>   
+        </div>
+    </div>
+</div>
